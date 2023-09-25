@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <HelloWorld msg="Welcome to Your Vue.js App" :obj="obj" />
+    <HelloWorld msg="Welcome to Your Vue.js App" :obj="obj" na="rtyu" />
     <ChildComponent1 />
   </div>
 </template>

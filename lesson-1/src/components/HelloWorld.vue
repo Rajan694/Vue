@@ -1,15 +1,22 @@
 <template>
   <div class="border border-warning border-3 p-2">
     <p @mouseover="getclicked()">by name {{ name }}</p>
-    <p>by function {{ getname() }}</p>
+
+    <p v-bind="$attrs">by function {{ getname() }}</p>
+
     <p>
       its a prop <b>{{ msg }} and {{ obj.name }} and {{ obj.age }}</b>
     </p>
-    <button class="btn btn-info btn-sm mb-1" @click="getclicked">
+
+    <button class="btn btn-info btn-sm mb-1" @click="getclicked()">
       click event
     </button>
+
     <input v-model="twowaybind" type="text" class="form-control" />
     <p>Two way binded value : {{ twowaybind }}</p>
+
+    <input type="text" ref="myInput" />
+    <button @click="onClick()">Focus</button>
   </div>
 </template>
 
@@ -32,6 +39,10 @@ export default {
     },
     getclicked() {
       console.warn("clicked");
+    },
+    onClick() {
+      this.$refs.myInput.focus();
+      console.log(this.$refs.myInput.value);
     },
   },
 };
