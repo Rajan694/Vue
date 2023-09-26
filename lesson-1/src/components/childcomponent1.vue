@@ -16,6 +16,11 @@
         </li>
       </ul>
     </div>
+    <div>
+      <p>Counter: {{ counter }}</p>
+      <button @click="incdecCounter('incr')">Increment</button>
+      <button @click="incdecCounter('decr')">Decrement</button>
+    </div>
   </div>
 </template>
 
@@ -30,11 +35,26 @@ export default {
         { id: 2, name: "Tomato" },
         { id: 3, name: "Apple" },
       ],
+      counter: 0,
     };
   },
   methods: {
     toggleMessage() {
       this.showMessage = !this.showMessage;
+    },
+    incdecCounter(type) {
+      if (type === "incr") {
+        this.counter++;
+      }
+      if (type === "decr") {
+        this.counter--;
+      }
+    },
+  },
+  watch: {
+    counter(val, prev) {
+      console.log(`value changed from ${prev} to ${val}`);
+      if (val > 5) this.counter = 0;
     },
   },
 };
