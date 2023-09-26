@@ -1,7 +1,21 @@
 <template>
   <div class="container">
     <HelloWorld msg="Welcome to Your Vue.js App" :obj="obj" na="rtyu" />
-    <ChildComponent1 />
+
+    <!-- Slots -->
+
+    <!-- single slot -->
+    <!-- <ChildComponent1><h1>using slots</h1></ChildComponent1> -->
+
+    <!-- Multiple Slots -->
+    <ChildComponent1>
+      <template v-slot:head>
+        <h1>using slot1</h1>
+      </template>
+      <template v-slot:foot>
+        <h1>using slot2</h1>
+      </template>
+    </ChildComponent1>
   </div>
 </template>
 
