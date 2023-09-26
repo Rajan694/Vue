@@ -30,6 +30,7 @@
         Angular
       </button>
     </div>
+    <LifeCycle />
   </div>
   <teleport to="#footer"><FooterComp /></teleport>
 </template>
@@ -41,6 +42,7 @@ import ChildComponent2 from "./components/childcomponent2.vue";
 import AngularComp from "./components/Angular.vue";
 import NodeComp from "./components/node.vue";
 import JavaComp from "./components/java.vue";
+import LifeCycle from "./components/LifeCycle.vue";
 import FooterComp from "./components/footer.vue";
 
 export default {
@@ -52,6 +54,7 @@ export default {
     AngularComp,
     NodeComp,
     JavaComp,
+    LifeCycle,
     FooterComp,
   },
   data() {
