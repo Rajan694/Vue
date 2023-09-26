@@ -31,6 +31,7 @@
       </button>
     </div>
   </div>
+  <teleport to="#footer"><FooterComp /></teleport>
 </template>
 
 <script>
@@ -40,6 +41,7 @@ import ChildComponent2 from "./components/childcomponent2.vue";
 import AngularComp from "./components/Angular.vue";
 import NodeComp from "./components/node.vue";
 import JavaComp from "./components/java.vue";
+import FooterComp from "./components/footer.vue";
 
 export default {
   name: "App",
@@ -50,6 +52,7 @@ export default {
     AngularComp,
     NodeComp,
     JavaComp,
+    FooterComp,
   },
   data() {
     return {
