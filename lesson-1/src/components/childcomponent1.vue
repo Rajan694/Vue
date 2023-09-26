@@ -22,9 +22,6 @@
       <button @click="incdecCounter('decr')">Decrement</button>
     </div>
 
-    <!-- single slot -->
-    <slot></slot>
-
     <!-- multiple slot -->
     <slot name="head"> <p>default value goes here</p></slot>
     <slot name="foot"> </slot>

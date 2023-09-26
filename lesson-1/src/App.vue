@@ -5,7 +5,7 @@
     <!-- Slots -->
 
     <!-- single slot -->
-    <!-- <ChildComponent1><h1>using slots</h1></ChildComponent1> -->
+    <ChildComponent2><h1>using slots</h1></ChildComponent2>
 
     <!-- Multiple Slots -->
     <ChildComponent1>
@@ -16,21 +16,44 @@
         <h1>using slot2</h1>
       </template>
     </ChildComponent1>
+
+    <div class="border border-secondary border-3 mt-3 p-2">
+      <!-- dynamic components -->
+      <component :is="tab" />
+      <button class="btn btn-primary btn-sm" @click="tab = 'JavaComp'">
+        Java
+      </button>
+      <button class="btn btn-primary btn-sm" @click="tab = 'NodeComp'">
+        Node
+      </button>
+      <button class="btn btn-primary btn-sm" @click="tab = 'AngularComp'">
+        Angular
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 import ChildComponent1 from "./components/childcomponent1.vue";
+import ChildComponent2 from "./components/childcomponent2.vue";
+import AngularComp from "./components/Angular.vue";
+import NodeComp from "./components/node.vue";
+import JavaComp from "./components/java.vue";
 
 export default {
   name: "App",
   components: {
     HelloWorld,
     ChildComponent1,
+    ChildComponent2,
+    AngularComp,
+    NodeComp,
+    JavaComp,
   },
   data() {
     return {
+      tab: "Java",
       obj: { name: "hello", age: 20 },
     };
   },
