@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import NotFound from "../views/NotFound.vue";
+import HttpReq from "../views/HttpReq.vue";
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: "/about/:name",
     name: "about",
     component: AboutView,
+  },
+  {
+    path: "/httpreq",
+    name: "httpreq",
+    component: HttpReq,
   },
   {
     path: "/:pathMatch(.*)*",
