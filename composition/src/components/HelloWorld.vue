@@ -10,10 +10,16 @@
   </div>
   <br /><br />
   <h4>The given number is {{ oddoreven }}</h4>
+  <br /><br />
+  <h2>{{ props.name }}</h2>
 </template>
 
 <script setup>
 import { ref, reactive, computed, watch } from "vue";
+
+const props = defineProps({
+  name: String,
+});
 
 const counter = ref(0);
 const counterData = reactive({

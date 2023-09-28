@@ -1,16 +1,9 @@
 <template>
   <div class="container">
-    <HelloWorld />
+    <HelloWorld name="Rajan by props" />
   </div>
 </template>
 
-<script>
+<script setup>
 import HelloWorld from "@/components/HelloWorld.vue";
-
-export default {
-  name: "HomeView",
-  components: {
-    HelloWorld,
-  },
-};
 </script>
