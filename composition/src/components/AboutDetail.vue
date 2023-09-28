@@ -1,24 +1,25 @@
 <template>
-  <h2>This is about details page</h2>
-  <h4>Content of page of id {{ $route.params.id }} by using $route.params</h4>
-  <h4>
-    Content of page of id {{ routeID }} by using route.params and in script tag
-  </h4>
+      <h2>This is about details page</h2>
+    <h4>Content of page of id {{ $route.params.id }} by using $route.params</h4>
+    <h4>
+      Content of page of id {{ routeID }} by using route.params and in script tag
+    </h4>
 
-  <RouterLink to="/about"
-    ><button class="btn btn-primary btn-sm me-2">
-      Back by using routerlink
-    </button></RouterLink
-  >
-  <button class="btn btn-primary btn-sm me-2" @click="$router.back()">
-    Back by using $router
-  </button>
-  <button class="btn btn-primary btn-sm me-2" @click="gohome()">
-    go home in 3 sec using router
-  </button>
-  <button class="btn btn-primary btn-sm me-2" @click="gofirst()">
-    go to first id
-  </button>
+    <RouterLink to="/about"
+      ><button class="btn btn-primary btn-sm me-2">
+        Back by using routerlink
+      </button></RouterLink
+    >
+    <button class="btn btn-primary btn-sm me-2" @click="$router.back()">
+      Back by using $router
+    </button>
+    <button class="btn btn-primary btn-sm me-2" @click="gohome()">
+      go home in 3 sec using router
+    </button>
+    <button class="btn btn-primary btn-sm me-2" @click="gofirst()">
+      go to first id
+    </button>
+  </div>
 </template>
 
 <script setup>

@@ -10,9 +10,19 @@
       <RouterLink :to="`/aboutdetails/${item.id}`">{{ item.title }}</RouterLink>
     </li>
   </ul>
+  <button
+    @click="increment(1)"
+    class="btn btn-lg"
+    :class="oddoreven == 'Even' ? 'btn-primary' : 'btn-danger'"
+  >
+    {{ counter }}
+  </button>
 </template>
+
 <script setup>
 import { ref } from "vue";
+import { useCounter } from "../use/useCounter.js";
+const { counter, increment, oddoreven } = useCounter();
 
 const input = ref(null);
 const getd = () => {
