@@ -15,7 +15,14 @@
     class="btn btn-lg"
     :class="oddoreven == 'Even' ? 'btn-primary' : 'btn-danger'"
   >
-    {{ counter }}
+    {{ counter }} by composable
+  </button>
+  <button
+    @click="store.increment(1)"
+    class="btn btn-lg"
+    :class="store.oddoreven == 'Even' ? 'btn-primary' : 'btn-danger'"
+  >
+    {{ store.counter }} by store
   </button>
 </template>
 
@@ -23,6 +30,12 @@
 import { ref } from "vue";
 import { useCounter } from "../use/useCounter.js";
 const { counter, increment, oddoreven } = useCounter();
+
+// Import the store
+import { useMyStore } from "../store/counter.js";
+
+// Use the store in the component
+const store = useMyStore();
 
 const input = ref(null);
 const getd = () => {

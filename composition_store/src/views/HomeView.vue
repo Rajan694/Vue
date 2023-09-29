@@ -3,8 +3,8 @@
     <HelloWorld name="Rajan by props" />
 
     <RouterLink to="/temp"
-      ><button class="btn btn-primary btn-sm me-2">
-        go to temp
+      ><button class="btn btn-primary me-2">
+        go to store counter
       </button></RouterLink
     >
   </div>

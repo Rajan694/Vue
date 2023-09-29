@@ -2,26 +2,28 @@
 import { defineStore } from "pinia";
 
 // Define your store
-export const useMyStore = defineStore("myStore", {
+export const useMyStore = defineStore({
+  id: "counter",
   // Define the state
   state: () => ({
-    count: 0,
+    counter: 0,
   }),
 
   // Define mutations to modify the state
   actions: {
-    increment() {
-      this.count++;
+    increment(amount) {
+      this.counter += amount;
     },
-    decrement() {
-      this.count--;
+
+    decrement(amount) {
+      this.counter -= amount;
     },
   },
 
   // Define getters to access the state
   getters: {
-    doubleCount() {
-      return this.count * 2;
+    oddoreven() {
+      return this.counter % 2 === 0 ? "Even" : "Odd";
     },
   },
 });
