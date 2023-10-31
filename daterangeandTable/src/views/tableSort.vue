@@ -1,41 +1,12 @@
 <template>
   <div class="container">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
     <RouterLink to="/daterange"
       ><button class="btn btn-primary me-2">DateRange</button></RouterLink
     >
     <p>table</p>
-    <div class="border mt-5 mb-3">
+    <div class="mt-5 mb-3">
       <DataTable
-        class="table table-striped table-bordered table-hover"
+        class="table table-striped table-hover table-bordered"
         :options="options"
       >
         <thead>
@@ -507,11 +478,6 @@
           </tr>
         </tbody>
       </DataTable>
-      <!-- <DataTable
-        :data="items"
-        :columns="columns"
-        :options="options"
-      ></DataTable> -->
     </div>
   </div>
 </template>
@@ -521,7 +487,7 @@ import { RouterLink } from "vue-router";
 import { ref } from "vue";
 import DataTable from "datatables.net-vue3";
 import DataTablesCore from "datatables.net-bs5";
-import "datatables.net-bs5/css/dataTables.bootstrap5.css";
+// import "datatables.net-bs5/css/dataTables.bootstrap5.css";
 DataTable.use(DataTablesCore);
 
 const items = ref([

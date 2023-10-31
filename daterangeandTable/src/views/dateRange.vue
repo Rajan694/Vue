@@ -4,16 +4,15 @@
       ><button class="btn btn-primary me-2">Table</button></RouterLink
     >
     <p>Date</p>
-    <div class="text-primary">
+    <div>
       <date-range-picker
+        class="rajan"
         opens="right"
         :locale-data="{ firstDay: 1, format: 'dd-mm-yyyy' }"
-        :showWeekNumbers="true"
         v-model="dateRange"
         :show-dropdowns="false"
         :auto-apply="false"
         @update="updateDateRange"
-        data-bs-theme="dark"
       >
       </date-range-picker>
       <p>{{ dateRange }}</p>
@@ -28,8 +27,8 @@ import "daterange-picker-vue3/dist/daterange-picker-vue3.css";
 
 //for date range
 const dateRange = {
-  startDate: "2019-01-01",
-  endDate: "2019-12-31",
+  startDate: "2023-10-10",
+  endDate: "2023-10-21",
 };
 function updateDateRange() {
   console.log(
@@ -39,4 +38,48 @@ function updateDateRange() {
 }
 </script>
 
-<style scoped></style>
+<style>
+.reportrange-text {
+  background: inherit !important;
+}
+.daterangepicker {
+  background-color: var(--bs-body-bg) !important;
+}
+.calendar-table {
+  background-color: var(--bs-body-bg) !important;
+  border: 1px solid var(--bs-border-color) !important;
+}
+th {
+  color: var(--bs-emphasis-color) !important;
+  background-color: var(--bs-body-bg) !important;
+}
+table {
+  color: var(--bs-emphasis-color) !important;
+  background-color: var(--bs-body-bg) !important;
+}
+tr {
+  color: var(--bs-emphasis-color) !important;
+  background-color: var(--bs-body-bg) !important;
+}
+tbody {
+  color: var(--bs-emphasis-color) !important;
+  background-color: var(--bs-body-bg) !important;
+}
+
+td {
+  color: var(--bs-emphasis-color) !important;
+  background-color: var(--bs-body-bg) !important;
+}
+td.in-range {
+  background-color: #ebf4f8 !important;
+  color: var(--bs-gray-900) !important;
+  border-color: transparent !important;
+}
+td.active {
+  background-color: #357ebd !important;
+  border-color: transparent !important;
+}
+.drp-calendar.left {
+  border-left: 1px solid var(--bs-border-color) !important;
+}
+</style>
