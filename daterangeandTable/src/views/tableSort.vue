@@ -479,36 +479,40 @@
         </tbody>
       </DataTable>
     </div>
+    <button @click="temp()">temp</button>
   </div>
 </template>
 
 <script setup>
 import { RouterLink } from "vue-router";
-import { ref } from "vue";
 import DataTable from "datatables.net-vue3";
 import DataTablesCore from "datatables.net-bs5";
+import DataTablesLib from "datatables.net-bs5";
+import "datatables.net-select";
+import "datatables.net-buttons";
+import "datatables.net-buttons/js/buttons.html5";
+import jszip from "jszip";
+// import pdfmake from "pdfmake";
 // import "datatables.net-bs5/css/dataTables.bootstrap5.css";
 DataTable.use(DataTablesCore);
-
-const items = ref([
-  { id: 1, name: "John Doe", email: "john@example.com" },
-  { id: 2, name: "Jane Smith", email: "jane@example.com" },
-  { id: 3, name: "Bob Johnson", email: "bob@example.com" },
-]);
-
-const columns = [
-  { title: "ID", data: "id" },
-  { title: "Name", data: "name" },
-  { title: "Email", data: "email" },
-];
+DataTable.use(DataTablesLib);
+DataTablesLib.Buttons.jszip(jszip);
+// DataTablesLib.Buttons.pdfMake(pdfmake);
+function temp() {
+  console.log(document.querySelector("table"));
+}
 
 const options = {
   paging: true,
   searching: true,
   ordering: true,
-
+  select: true,
   responsive: true,
   lengthMenu: [5, 10, 20, 50],
+  dom: '<"toolbar"lBf>rtip',
+  buttons: {
+    buttons: [{ extend: "excel", text: "Save as Excel", filename: "data" }],
+  },
 };
 </script>
 
