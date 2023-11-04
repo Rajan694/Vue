@@ -6,6 +6,9 @@
     <RouterLink to="/daterange"
       ><button class="btn btn-primary me-2">DateRange</button></RouterLink
     >
+    <RouterLink to="/chart"
+      ><button class="btn btn-primary me-2">Chart</button></RouterLink
+    >
   </div>
 </template>
 
